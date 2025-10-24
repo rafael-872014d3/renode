@@ -1,3 +1,4 @@
 {
     "workspacePointer": "${workspaceFolder}",
+    "cmake.sourceDirectory": "C:/Workspace/renode/renode/tools/external_control_client",
 }

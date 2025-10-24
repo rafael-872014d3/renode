@@ -1,0 +1,14 @@
+# === STM32U585_8756_bues Simulation ===
+
+mach create "STM32U585_8756_bues"
+
+machine LoadPlatformDescription @platforms/cpus/stm32u585.repl
+
+sysbus LoadELF @C:\Workspace\8756_bueS\A.17.00\cmake-build-GNU_STM32U5_Debug\UserArea\UserArea.elf
+
+machine StartGdbServer 3333
+
+start
+
+# i @C:\Users\rafael.sekula\Desktop\Renode\u585_helloworld.resc
+
