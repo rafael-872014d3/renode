@@ -12,11 +12,13 @@ sysbus LoadELF @C:\Workspace\8756_bueS\A.17.00\cmake-build-GNU_STM32U5_Debug\Use
 
 : load spi flash image
 logLevel -1 spi3.w25q64.w25q64_mem
-# spi3.w25q64.w25q64_mem LinkFile resc/flash.img
+spi3.w25q64.w25q64_mem LinkFile "resc/flash.img"
 
 logLevel -1 adc1
 
 logLevel -1 adc4
+
+logLevel -1 rcc
 
 # sysbus LogPeripheralAccess adc1
 
@@ -24,10 +26,10 @@ logLevel -1 adc4
 
 
 
-machine StartGdbServer 3333
+machine StartGdbServer 3333 true
 
 
-start
+# start
 
 # i @C:\Users\rafael.sekula\Desktop\Renode\u585_helloworld.resc
 

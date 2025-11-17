@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/AntShell" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/BigGustave" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/CxxDemangler" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/ELFSharp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/FdtSharp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/InpliTftpServer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/Migrant" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/Packet.Net" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/bc-csharp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/options-parser" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/termsharp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/termsharp/xwt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Infrastructure" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Infrastructure/src/Emulator/Cores/tlib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/Infrastructure/src/Emulator/Cores/tlib/softfloat-3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tools/dts2repl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tools/models_analyzer" vcs="Git" />
+  </component>
+</project>
