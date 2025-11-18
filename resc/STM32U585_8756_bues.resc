@@ -16,7 +16,7 @@ spi3.w25q64.w25q64_mem LinkFile "resc/flash.img"
 
 logLevel -1 adc1
 
-logLevel -1 adc4
+# logLevel -1 adc4
 
 logLevel -1 rcc
 
