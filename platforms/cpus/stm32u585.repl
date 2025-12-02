@@ -17,7 +17,7 @@ flashreg: Miscellaneous.STM32U585_Flash @ sysbus 0x40022000
 sram: Memory.MappedMemory @ sysbus 0x20000000
     size: 0xC4400
 
-usart1: UART.STM32F7_USART @ sysbus 0x40004400
+usart1: UART.STM32F7_USART @ sysbus 0x40013800
     frequency: 160000000
     IRQ -> nvic@61
 
@@ -48,6 +48,13 @@ gpioPortI: GPIOPort.STM32U585_GPIOPort @ sysbus <0x42022000, +0x400>
 gpioPortE: GPIOPort.STM32U585_GPIOPort @ sysbus <0x42021000, +0x400>
     numberOfAFs: 16
 
+can1: CAN.MCAN @ sysbus <0x4000A400, +0x400>
+    Line0 -> nvic@39
+    Line1 -> nvic@40
+    messageRAM: canMessageRAM
+
+canMessageRAM: Memory.ArrayMemory @ sysbus <0x4000B400, +0x800>
+    size: 0x2800
 
 spi1: SPI.STM32U585_SPI @ sysbus 0x40013000
 spi2: SPI.STM32U585_SPI @ sysbus 0x40003800
@@ -67,7 +74,7 @@ w25q64_mem: Memory.PersistentArrayMemory @ w25q64 0
     saveOnReset: true
 
 iwdg: Timers.STM32_IndependentWatchdog @ sysbus 0x40003000
-    frequency: 32000 
+    frequency: 1000 
 
 adc1: Analog.STM32U585_ADC1 @ sysbus 0x42028000
     referenceVoltage: 3.0

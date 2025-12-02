@@ -14,20 +14,30 @@ sysbus LoadELF @C:\Workspace\8756_bueS\A.17.00\cmake-build-GNU_STM32U5_Debug\Use
 logLevel -1 spi3.w25q64.w25q64_mem
 spi3.w25q64.w25q64_mem LinkFile "resc/flash.img"
 
-logLevel -1 adc1
 
-# logLevel -1 adc4
+#logLevel -1 adc1
 
-logLevel -1 rcc
+#logLevel -1 adc4
+
+#logLevel -1 rcc
+
+logLevel -1 iwdg
 
 # sysbus LogPeripheralAccess adc1
 
 # sysbus LogPeripheralAccess adc4
 
-
+showAnalyzer usart1
 
 machine StartGdbServer 3333 true
 
+adc4 SetDefaultValue 1700 11
+
+: setup CAN interface
+emulation CreateCANHub "canHub"
+machine CreateMqttCanBridge "mqttCan" "protobuf" "mqtt://localhost:1883" 0 0
+connector Connect can1 canHub
+connector Connect mqttCan canHub
 
 # start
 
