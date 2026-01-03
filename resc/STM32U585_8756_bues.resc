@@ -21,13 +21,15 @@ spi3.w25q64.w25q64_mem LinkFile "resc/flash.img"
 
 #logLevel -1 rcc
 
-logLevel -1 iwdg
+#logLevel -1 iwdg
+
+logLevel -1 can1
 
 # sysbus LogPeripheralAccess adc1
 
 # sysbus LogPeripheralAccess adc4
 
-showAnalyzer usart1
+#showAnalyzer usart1
 
 machine StartGdbServer 3333 true
 
@@ -40,6 +42,4 @@ connector Connect can1 canHub
 connector Connect mqttCan canHub
 
 # start
-
-# i @C:\Users\rafael.sekula\Desktop\Renode\u585_helloworld.resc
 

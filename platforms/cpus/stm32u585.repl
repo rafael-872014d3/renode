@@ -27,7 +27,9 @@ rcc: Miscellaneous.STM32U585_RCC @ sysbus 0x46020C00
     rtcPeripheral: rtc
 pwr: Miscellaneous.STM32U585_PWR @ sysbus 0x46020800
 
-
+crc: CRC.STM32_CRC @ sysbus 0x40023000
+    series: STM32Series.F0
+    configurablePoly: true
 
 gpioPortA: GPIOPort.STM32U585_GPIOPort @ sysbus <0x42020000, +0x400>
     numberOfAFs: 16
@@ -48,13 +50,15 @@ gpioPortI: GPIOPort.STM32U585_GPIOPort @ sysbus <0x42022000, +0x400>
 gpioPortE: GPIOPort.STM32U585_GPIOPort @ sysbus <0x42021000, +0x400>
     numberOfAFs: 16
 
-can1: CAN.MCAN @ sysbus <0x4000A400, +0x400>
+can1: CAN.MCAN_U585 @ sysbus 0x4000A400
     Line0 -> nvic@39
     Line1 -> nvic@40
     messageRAM: canMessageRAM
 
-canMessageRAM: Memory.ArrayMemory @ sysbus <0x4000B400, +0x800>
-    size: 0x2800
+canMessageRAM: Memory.ArrayMemory @ sysbus <0x4000AC00, +0x400>
+    size: 0x400
+
+
 
 spi1: SPI.STM32U585_SPI @ sysbus 0x40013000
 spi2: SPI.STM32U585_SPI @ sysbus 0x40003800
@@ -76,6 +80,11 @@ w25q64_mem: Memory.PersistentArrayMemory @ w25q64 0
 iwdg: Timers.STM32_IndependentWatchdog @ sysbus 0x40003000
     frequency: 1000 
 
+tim15: Timers.STM32U585_Timer @ sysbus 0x40014000
+    -> nvic@69
+    frequency: 10000000
+    initialLimit: 0xFFFF
+    
 adc1: Analog.STM32U585_ADC1 @ sysbus 0x42028000
     referenceVoltage: 3.0
     externalEventFrequency: 10000
