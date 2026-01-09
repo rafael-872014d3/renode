@@ -55,10 +55,8 @@ can1: CAN.MCAN_U585 @ sysbus 0x4000A400
     Line1 -> nvic@40
     messageRAM: canMessageRAM
 
-canMessageRAM: Memory.ArrayMemory @ sysbus <0x4000AC00, +0x400>
-    size: 0x400
-
-
+canMessageRAM: Memory.ArrayMemory @ sysbus 0x4000AC00
+    size: 0x1000
 
 spi1: SPI.STM32U585_SPI @ sysbus 0x40013000
 spi2: SPI.STM32U585_SPI @ sysbus 0x40003800
