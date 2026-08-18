@@ -31,14 +31,16 @@ gpioPortA OnGPIO 11 true
 
 
 # Load JSON sensor replay data
+#i2c2.sensor LoadJson "src/Infrastructure/src/Emulator/Peripherals/Peripherals/Sensors/Coriolis_Replaysensor/Recordings/04.03.26_Rampe0-100.json"
 i2c2.sensor LoadJson "src/Infrastructure/src/Emulator/Peripherals/Peripherals/Sensors/Coriolis_Replaysensor/Recordings/04.03.26_Rampe100-0.json"
+#i2c2.sensor LoadJson "src/Infrastructure/src/Emulator/Peripherals/Peripherals/Sensors/Coriolis_Replaysensor/Recordings/04.03.26_Sprunge.json"
 logLevel 1 i2c2.sensor
 
 # Setup CAN interface
 emulation CreateCANHub "canHub"
-# machine CreateMqttCanBridge "mqttCan" "protobuf" "mqtt://localhost:1883" 0 0
+machine CreateMqttCanBridge "mqttCan" "protobuf" "mqtt://localhost:1883" 0 0
 connector Connect can1 canHub
-# connector Connect mqttCan canHub
+connector Connect mqttCan canHub
 
 # Setup CanOpenBitBanging 
 machine CreateCANOpenBitBanging "canOpenBitBanging"
